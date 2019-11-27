@@ -73,7 +73,33 @@ public class Array {
 		for(int i = 0; i < array.length; i++){
 			System.out.println(array[i]);
 		}
+		//배열의 길이를 알고 있다고 숫자를 사용하는 것을 하드코딩이라고 한다.
+		//길이를 알더라도 length를 사용하는 것이 더 좋은 코드이다.
+		for(int i = 0; i < array.length; i++){
+			array[i] = i + 1;
+			
+		} System.out.println(Arrays.toString(array));
 		
+		//배열에 숫자를 담고 합계와 평균을 구해보자.
+		int[] numbers = new int[10];
+		
+		for(int i = 0; i <numbers.length; i++){
+			numbers[i] = (int)(Math.random() *100) + 1;
+		} System.out.println(Arrays.toString(numbers));
+		
+		sum = 0;
+		double avg = 0;
+		for(int i = 0; i < numbers.length; i++){
+			sum += numbers[i];
+		}
+		avg = (double)sum / numbers.length;
+		System.out.println("합계 : " + sum + " / 평균 : " + avg );
+		
+		
+		//향상된 for문
+		for(int number : numbers){ //배열에 있는 값을 차례대로 변수에 넣는다.
+			System.out.println(number);
+		}
 	}
 
 }

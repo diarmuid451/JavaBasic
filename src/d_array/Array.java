@@ -100,6 +100,47 @@ public class Array {
 		for(int number : numbers){ //배열에 있는 값을 차례대로 변수에 넣는다.
 			System.out.println(number);
 		}
+		//배열에 저장된 숫자들 중 최소값과 최대값을 찾아주세요.
+		
+		int min = 0; min = numbers[0];
+		for(int i = 0; i<numbers.length; i++){
+			if(min > numbers[i]) min = numbers[i];
+		} 
+		
+		int max = 0; max = numbers[0];
+		for(int i = 0; i<numbers.length; i++){
+			if(max < numbers[i]) max = numbers[i];
+		} 
+		System.out.println("min : "+ min + " / max : " + max);
+		
+		
+		int[] shuffle = new int[30];
+		for(int i = 0; i<shuffle.length;i++){
+			shuffle[i] = i + 1;
+		} System.out.println(Arrays.toString(shuffle));
+		
+		//배열의 값을 섞어주세요.
+		//0번 인덱스의 값과 랜덤 인덱스의 값을 서로 교환한다.
+		
+		for(int i = 0; i< shuffle.length * 10; i++){
+		int random = (int)(Math.random()* shuffle.length);
+		int tmp = shuffle[0];
+		shuffle[0] = shuffle[random];
+		shuffle[random] = tmp;
+		}
+		System.out.println(Arrays.toString(shuffle));
+		
+		
+		//1~10사이의 난수를 500번 생성하고, 각 숫자가 생성된 횟수를 출력해주세요.
+		int [] count = new int [10];
+		int [] num = new int[500];
+		for(int i = 0; i <num.length; i++){
+		num[i] = (int)(Math.random()*10)+1;
+		}
+		for(int i = 0; i<num.length; i++){
+			count[num[i]-1]++;
+			System.out.println(num[i]+ "의개수 : " + count[num[i]-1]);	
+		}
 	}
-
+	
 }

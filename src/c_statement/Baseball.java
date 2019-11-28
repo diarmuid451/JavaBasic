@@ -5,19 +5,24 @@ import java.util.Scanner;
 public class Baseball {
 
 	public static void main(String[] args) {
+		//숫자야구게임을 만들어주세요.
 		int a1, a2, a3;
-		a1 = (int)(Math.random()*9)+1;
+		
+		a1 = (int)(Math.random() * 9) + 1;
+		
 		do{
-			a2 = (int)(Math.random()*9)+1;
-		}while(a1 ==a2);
-		do {
-			a3 = (int)(Math.random()*9)+1;
+			a2 = (int)(Math.random() * 9) + 1;
+		}while(a1 == a2);
+		
+		do{
+			a3 = (int)(Math.random() * 9) + 1;
 		}while(a1 == a3 || a2 == a3);
+		System.out.println(a1 + "" + a2 + a3);
 		
 		Scanner s = new Scanner(System.in);
 		int count = 0;
 		while(true){
-			System.out.println("3자리 숫자를 입력해주세요.");
+			System.out.println("3자리 숫자를 입력해주세요>");
 			int input = Integer.parseInt(s.nextLine());
 			int i3 = input % 10;
 			input /= 10;
@@ -45,14 +50,25 @@ public class Baseball {
 			
 			System.out.println(++count + "차 시도(" + i1 + i2 + i3 + ") : "
 					+ strike + "S " + ball + "B " + out + "O");
-			System.out.println("------------------------");
+			System.out.println("-----------------------");
 			if(strike == 3){
-				System.out.println("정답입니다!");
+				System.out.println("정답입니다!!");
 				break;
 			}
 		}
-		
-		
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

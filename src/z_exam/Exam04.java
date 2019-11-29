@@ -1,5 +1,7 @@
 package z_exam;
 
+import java.util.Scanner;
+
 public class Exam04 {
 
 	public static void main(String[] args) {
@@ -202,6 +204,122 @@ public class Exam04 {
 		} // main
 		}
 		*/
+	
+		/*[4-9] 숫자로 이루어진 문자열 str이 있을 때, 각 자리의 합을 더한 결과를 출력하는 코
+		를 완성하라. 만일 문자열이 "12345"라면, ‘1+2+3+4+5’의 결과인 15를 출력이 출력되
+		어야 한다. (1)에 알맞은 코드를 넣으시오.
+		[Hint] String클래스의 charAt(int i)을 사용 */
+		String str = "3488";
+		int sum = 0;
+		for(int i=0; i < str.length(); i++) {
+			sum += str.charAt(i) - '0';		
+
+		}
+		System.out.println("sum="+sum);
+		
+		
+//		[4-12] 구구단의 일부분을 다음과 같이 출력하시오.
+		for(int i = 1; i <= 9; i++){
+			for(int j = 1; j <= 3; j++){
+				int x = (j+1) + (i-1)/3*3;
+				int y = i%3==0 ? 3 : i%3 ;
+				if(x > 9)
+					break;
+					System.out.print(x+"*"+y+"="+x*y+"\t");
+				}
+				System.out.println();
+				if(i%3==0) System.out.println();
+			}
+			
+			
+		
+		
+		
+		/*[실행결과]
+		2*1=2 3*1=3 4*1=4
+		2*2=4 3*2=6 4*2=8
+		2*3=6 3*3=9 4*3=12
+		
+		5*1=5  6*1=6  7*1=7
+		5*2=10 6*2=12 7*2=14
+		5*3=15 6*3=18 7*3=21
+		
+		8*1=8  9*1=9
+		8*2=16 9*2=18
+		8*3=24 9*3=27
+		*/
+		
+		
+		
+//		[4-13] 다음은 주어진 문자열(value)이 숫자인지를 판별하는 프로그램이다. (1)에 알맞은 코드를 넣어서 프로그램을 완성하시오.
+		
+		String value = "12334";
+		char ch = ' ';
+		boolean isNumber = true;
+		// 반복문과 charAt(int i)를 이용해서 문자열의 문자를
+		// 하나씩 읽어서 검사한다.
+		for(int i=0; i < value.length() ;i++) {
+			ch = value.charAt(i);
+			if(!(ch >='0' && ch <='9')){
+				isNumber = false;
+				break;
+			}
+		}
+		if (isNumber) {
+		System.out.println(value+"는 숫자입니다.");
+		} else {
+		System.out.println(value+"는 숫자가 아닙니다.");
+		}
+		
+//		[실행결과]
+//		12o34는 숫자가 아닙니다.
+		
+		/*	
+		[4-14] 다음은 숫자맞추기 게임을 작성한 것이다. 1과 100사이의 값을 반복적으로 입력
+		해서 컴퓨터가 생각한 값을 맞추면 게임이 끝난다. 사용자가 값을 입력하면, 컴퓨터는 자
+		신이 생각한 값과 비교해서 결과를 알려준다. 사용자가 컴퓨터가 생각한 숫자를 맞추면
+		게임이 끝나고 몇 번 만에 숫자를 맞췄는지 알려준다. (1)~(2)에 알맞은 코드를 넣어 프
+		로그램을 완성하시오.*/
+		// 1~100사이의 임의의 값을 얻어서 answer에 저장한다.
+		
+		int answer = (int)(Math.random()*100 +1) ;
+		int input = 0; // 사용자입력을 저장할 공간
+		int count = 0; // 시도횟수를 세기위한 변수
+		// 화면으로 부터 사용자입력을 받기 위해서 Scanner클래스 사용
+		Scanner s = new Scanner(System.in);
+		
+		do {
+		count++;
+		System.out.print("1과 100사이의 값을 입력하세요 :");
+		input = s.nextInt(); // 입력받은 값을 변수 input에 저장한다.
+		if(input < answer){
+			System.out.println("더 큰 수를 입력하세요.");
+		} else if(input > answer){
+			System.out.println("더 작은 수를 입력하세요.");
+		} else {
+			System.out.println("맞췄습니다.");
+			System.out.println("시도횟수는" + count + "번입니다.");
+			break;
+		}
+
+
+				} while(true); // 무한반복문
+		
+		/*
+		[실행결과]
+		1과 100사이의 값을 입력하세요 :50
+		더 큰 수를 입력하세요.
+		1과 100사이의 값을 입력하세요 :75
+		더 큰 수를 입력하세요.
+		1과 100사이의 값을 입력하세요 :87
+		더 작은 수를 입력하세요.
+		1과 100사이의 값을 입력하세요 :80
+		더 작은 수를 입력하세요.
+		1과 100사이의 값을 입력하세요 :77
+		더 작은 수를 입력하세요.
+		1과 100사이의 값을 입력하세요 :76
+		맞췄습니다.
+		시도횟수는 6번입니다. */
 	}
 
 }

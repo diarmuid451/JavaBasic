@@ -14,6 +14,11 @@ public class Exam05 {
 		d. int[] arr = new int[5]{1,2,3,4,5};
 		e. int arr[5];
 		f. int[] arr[] = new int[3][];
+		d,e
+		d : 뒤에 {}로 배열을 정해주면 []안에 배열크기를 지정할 수 없다.
+		e : 초기화 할때는 []안에 배열크기를 설정 할 수 없다.
+		
+		
 		[5-2] 다음과 같은 배열이 있을 때, arr[3].length의 값은 얼마인가?
 		int[][] arr = {
 		{ 5, 5, 5, 5, 5},
@@ -21,14 +26,16 @@ public class Exam05 {
 		{ 20, 20, 20, 20},
 		{ 30, 30}
 		};
+		
+		2
 		*/
 		
 //		[5-3] 배열 arr에 담긴 모든 값을 더하는 프로그램을 완성하시오.
 		int[] arr = {10, 20, 30, 40, 50};
 		int sum = 0;
-		/*
-		(1) 알맞은 코드를 넣어 완성하시오.
-		*/
+		
+		for(int i = 0; i<arr.length;i++)
+			sum += arr[i];
 		System.out.println("sum="+sum);
 		
 //		[실행결과]
@@ -43,9 +50,16 @@ public class Exam05 {
 			};
 				int total = 0;
 				float average = 0;
-				/*
-				(1) 알맞은 코드를 넣어 완성하시오.
-				*/
+				
+				for(int i = 0; i<arr1.length; i++) {
+					for(int j = 0; j<arr1[i].length; j++) {
+						total += arr1[i][j];
+					}
+						
+				}	average = total/(float)(arr1.length * arr1[0].length);
+				
+				
+				
 				System.out.println("total="+total);
 				System.out.println("average="+average);
 				
@@ -81,9 +95,9 @@ public class Exam05 {
 		int money = 2680;
 		System.out.println("money="+money);
 		for(int i=0;i<coinUnit.length;i++) {
-		/*
-		(1) 알맞은 코드를 넣어 완성하시오.
-		*/ 
+			System.out.println(coinUnit[i] + "원 : " + money/coinUnit[i]);
+			money = money&coinUnit[i];
+			
 		}				
 
 //		[실행결과]
@@ -97,7 +111,7 @@ public class Exam05 {
 //		보유한 동전의 개수로 거스름돈을 지불할 수 없으면, ‘거스름돈이 부족합니다.’라고 출력하고 종료한다. 
 //		지불할 돈이 충분히 있으면, 거스름돈을 지불한 만큼 가진 돈에서 빼고 남은 동전의 개수를 화면에 출력한다. 
 //		(1)에 알맞은 코드를 넣어서 프로그램을 완성하시오.		
-		if(args.length!=1) {
+		/*if(args.length!=1) {
 			System.out.println("USAGE: java Exercise5_7 3120");
 			System.exit(0);
 			}
@@ -108,12 +122,19 @@ public class Exam05 {
 			int[] coin = {5, 5, 5, 5}; // 단위별 동전의 개수
 			for(int i=0;i<coinUnit1.length;i++) {
 			int coinNum = 0;
-			/* (1) 아래의 로직에 맞게 코드를 작성하시오.
-			1. 금액(money)을 동전단위로 나눠서 필요한 동전의 개수(coinNum)를 구한다.
-			2. 배열 coin에서 coinNum만큼의 동전을 뺀다.
-			(만일 충분한 동전이 없다면 배열 coin에 있는 만큼만 뺀다.)
-			3. 금액에서 동전의 개수(coinNum)와 동전단위를 곱한 값을 뺀다.
-			*/
+//			(1) 아래의 로직에 맞게 코드를 작성하시오.
+//			1. 금액(money)을 동전단위로 나눠서 필요한 동전의 개수(coinNum)를 구한다.
+			coinNum = money1/coinUnit1[i];
+//			2. 배열 coin에서 coinNum만큼의 동전을 뺀다.
+//			(만일 충분한 동전이 없다면 배열 coin에 있는 만큼만 뺀다.)
+			if(coin[i] >= coinNum ) {
+				coin[i] -= coinNum;
+			} else {
+				coinNum = coin[i];
+				coin[i] = 0;
+			}
+//			3. 금액에서 동전의 개수(coinNum)와 동전단위를 곱한 값을 뺀다.
+			money1 -= coinNum * coinUnit1[i];
 			System.out.println(coinUnit1[i]+"원: "+coinNum);
 			}
 			if(money1 > 0) {
@@ -123,7 +144,7 @@ public class Exam05 {
 			System.out.println("=남은 동전의 개수 =");
 			for(int i=0;i<coinUnit1.length;i++) {
 			System.out.println(coinUnit1[i]+"원:"+coin[i]);
-			}
+			}*/
 
 /*			[실행결과]
 			money=3170
@@ -148,11 +169,12 @@ public class Exam05 {
 			int[] answer = { 1,4,4,3,1,4,4,2,1,3,2 };
 			int[] counter = new int[4];
 			for(int i=0; i < answer.length;i++) {
-			/* (1) 알맞은 코드를 넣어 완성하시오. */ }
+			counter[answer[i]-1]++; }
 			for(int i=0; i < counter.length;i++) {
-			/*
-			(2) 알맞은 코드를 넣어 완성하시오.
-			*/
+				System.out.print(counter[i]);
+			for(int j=0; j < counter[i];j++) {
+				System.out.print("*");
+			}
 			System.out.println();
 			}				
 			

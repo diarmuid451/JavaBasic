@@ -33,41 +33,31 @@ public class Score {
 		System.out.println("석차 이름" +"\t"+"JavaOracleHTMLCSSJQueryJSP"+"\t"+"총점" + "\t"+ "평균");
 		
 		
-		for(int a = 0; a<scores.length;a++ ){
-			for(int b = 0; b<scores[a].length; b++){
-				scores[a][b] = (int)(Math.random()*50 + 50);
-				sum[a] += scores[a][b];
-							
-				}
-			}
-			for(int i = 0; i<scores.length;i++ ){
-					 if(sum[i] < sum[i+1]){
-						tmp = sum[i];
-						sum[i] = sum[i+1];
-						sum[i+1] = tmp;
-						rename[0][0] = name[i][0];
-						name[i][0] = name[i+1][0];
-						name[i+1][0] = rename[0][0];
-						tmps[0] = scores[i];
-						scores[i] = scores[i+1];
-						scores[i+1] = tmps[0];
-					
-					
-					
-					
+		for(int i = 0; i<scores.length;i++ ){
+			for(int j = 0; j<scores[i].length; j++){
+				scores[i][j] = (int)(Math.random()*50 + 50);
+				sum[i] += scores[i][j];
 				
 				}
-					
+			for(int i1 = 0; i1<scores.length-1;i1++) {
+				if(sum[i1] < sum[i1+1]){
+				tmp = sum[i1];
+				sum[i1] = sum[i1+1];
+				sum[i1+1] = tmp;
+				rename[0][0] = name[i1][0];
+				name[i1][0] = name[i1+1][0];
+				name[i1+1][0] = rename[0][0];
+				tmps[0] = scores[i1];
+				scores[i1] = scores[i1+1];
+				scores[i1+1] = tmps[0];
+			 }			
+			}
 			avg[i] =(double)(sum[i])/(scores[i].length);	
 			System.out.print(Arrays.toString(top[i]));
-			
-			
 			System.out.print(Arrays.toString(name[i]));
 			System.out.println(Arrays.toString(scores[i]) + "\t" + sum[i] + "\t"+avg[i]);	
 			
-			
-		} 
-		
+		}
 		
 		
 	}

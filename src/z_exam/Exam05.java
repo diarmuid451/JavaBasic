@@ -112,8 +112,7 @@ public class Exam05 {
 //		지불할 돈이 충분히 있으면, 거스름돈을 지불한 만큼 가진 돈에서 빼고 남은 동전의 개수를 화면에 출력한다. 
 //		(1)에 알맞은 코드를 넣어서 프로그램을 완성하시오.		
 		/*if(args.length!=1) {
-			System.out.println("USAGE: java Exercise5_7 3120");
-			System.exit(0);
+			
 			}
 			// 문자열을 숫자로 변환한다. 입력한 값이 숫자가 아닐 경우 예외가 발생한다.
 			int money1 = Integer.parseInt(args[0]);

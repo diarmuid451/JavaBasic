@@ -79,7 +79,7 @@ public class StringArray {
 		//123456789 -> 123,456,789 
 		//12345 -> 12,345
 		//1234 -> 1,234
-		str = "123678";
+		str = "1236789";
 		revStr = "";
 		String num = "";
 		for(int  i = str.length()-1; i >= 0; i--){
@@ -97,6 +97,22 @@ public class StringArray {
 		} 
 		
 		System.out.println(num);
+		
+		Scanner sc = new Scanner(System.in);
+				
+		System.out.println("숫자를 입력해주세요.");
+		String number = sc.nextLine();
+		String newNumber = "";
+		
+		int count = 0;
+		
+		for(int i = number.length()-1; i >=0; i--){
+			newNumber = number.charAt(i) + newNumber;
+			count++;
+			if(count % 3 ==0 && count !=number.length()){
+				newNumber = "," + newNumber;
+			}
+		}System.out.println(newNumber);
 	}
 
 }

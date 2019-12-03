@@ -99,7 +99,7 @@ public class Exam05 {
 			money = money&coinUnit[i];
 			
 		}				
-
+	
 //		[실행결과]
 //		MONEY=2680
 //		500원: 5
@@ -111,26 +111,25 @@ public class Exam05 {
 //		보유한 동전의 개수로 거스름돈을 지불할 수 없으면, ‘거스름돈이 부족합니다.’라고 출력하고 종료한다. 
 //		지불할 돈이 충분히 있으면, 거스름돈을 지불한 만큼 가진 돈에서 빼고 남은 동전의 개수를 화면에 출력한다. 
 //		(1)에 알맞은 코드를 넣어서 프로그램을 완성하시오.		
-		/*if(args.length!=1) {
-			
-			}
-			// 문자열을 숫자로 변환한다. 입력한 값이 숫자가 아닐 경우 예외가 발생한다.
-			int money1 = Integer.parseInt(args[0]);
+		
+		// 문자열을 숫자로 변환한다. 입력한 값이 숫자가 아닐 경우 예외가 발생한다.
+		
+			int money1 = 3510;
 			System.out.println("money="+money1);
 			int[] coinUnit1 = {500, 100, 50, 10 }; // 동전의 단위
 			int[] coin = {5, 5, 5, 5}; // 단위별 동전의 개수
 			for(int i=0;i<coinUnit1.length;i++) {
-			int coinNum = 0;
+				int coinNum = 0;
 //			(1) 아래의 로직에 맞게 코드를 작성하시오.
 //			1. 금액(money)을 동전단위로 나눠서 필요한 동전의 개수(coinNum)를 구한다.
-			coinNum = money1/coinUnit1[i];
+				coinNum = money1/coinUnit1[i];
 //			2. 배열 coin에서 coinNum만큼의 동전을 뺀다.
 //			(만일 충분한 동전이 없다면 배열 coin에 있는 만큼만 뺀다.)
-			if(coin[i] >= coinNum ) {
-				coin[i] -= coinNum;
-			} else {
-				coinNum = coin[i];
-				coin[i] = 0;
+				if(coin[i] >= coinNum ) {
+					coin[i] -= coinNum;
+				} else {
+					coinNum = coin[i];
+					coin[i] = 0;
 			}
 //			3. 금액에서 동전의 개수(coinNum)와 동전단위를 곱한 값을 뺀다.
 			money1 -= coinNum * coinUnit1[i];
@@ -143,7 +142,7 @@ public class Exam05 {
 			System.out.println("=남은 동전의 개수 =");
 			for(int i=0;i<coinUnit1.length;i++) {
 			System.out.println(coinUnit1[i]+"원:"+coin[i]);
-			}*/
+			}
 
 /*			[실행결과]
 			money=3170
@@ -168,8 +167,12 @@ public class Exam05 {
 			int[] answer = { 1,4,4,3,1,4,4,2,1,3,2 };
 			int[] counter = new int[4];
 			for(int i=0; i < answer.length;i++) {
-			counter[answer[i]-1]++; }
+				/* (1) 알맞은 코드를 넣어 완성하시오. */
+				counter[answer[i]-1]++; }
 			for(int i=0; i < counter.length;i++) {
+				/*
+				(2) 알맞은 코드를 넣어 완성하시오.
+				*/
 				System.out.print(counter[i]);
 			for(int j=0; j < counter[i];j++) {
 				System.out.print("*");
@@ -200,9 +203,11 @@ public class Exam05 {
 			System.out.println();
 			for(int i=0; i < star.length;i++) {
 			for(int j=0; j < star[i].length;j++) {
-			/*
-			(1) 알맞은 코드를 넣어 완성하시오.
-			*/ }
+				int x = j;
+				int y = star.length-1-i;
+				
+			result[x][y] = star[i][j];
+			 }
 			}
 			for(int i=0; i < result.length;i++) {
 			for(int j=0; j < result[i].length;j++) {
@@ -236,9 +241,16 @@ public class Exam05 {
 			// 문자열 src의 문자를 charAt()으로 하나씩 읽어서 변환 후 result에 저장
 			for(int i=0; i < src.length();i++) {
 			char ch = src.charAt(i);
-			/*
-			(1) 알맞은 코드를 넣어 완성하시오.
-			*/ }
+				/*
+				(1) 알맞은 코드를 넣어 완성하시오.
+				 */ 
+				if('a' <= ch && 'z' >= ch){
+				result1 += abcCode[ch - 'a'];
+				} else if('0'<= ch && '9' >= ch){
+				result1 += numCode[ch - '0'];
+				}
+				
+			}
 			System.out.println("src:"+src);
 			System.out.println("result:"+result1);			
 			
@@ -260,7 +272,13 @@ public class Exam05 {
 			for(int j=0; j < score[i].length;j++) {
 			/*
 			(1) 알맞은 코드를 넣어 완성하시오.
-			*/ }
+			*/ 
+			result2[i][j] = score[i][j];
+			result2[i][score[0].length] += score[i][j];
+			result2[score.length][j] += score[i][j];
+			result2[score.length][score[0].length] += result2[i][j];
+			
+				}
 			}
 			for(int i=0; i < result2.length;i++) {
 			for(int j=0; j < result2[i].length;j++) {
@@ -276,9 +294,26 @@ public class Exam05 {
 //			50 50 50 150
 //			240 240 240 720
 			
-/*			[5-12] 예제5-23을 변경하여, 아래와 같은 결과가 나오도록 하시오.
-						
-			[실행결과]
+//			[5-12] 예제5-23을 변경하여, 아래와 같은 결과가 나오도록 하시오.
+			/*String[][] words1 = {{"chair","의자"},{"computer","컴퓨터"},{"integer","정수"}};
+			int ans = 0;
+			Scanner scanner = new Scanner(System.in);
+			
+			for(int i = 0; i<words1.length; i++){
+				System.out.printf("Q%d. %s의 뜻은?", i+1, words1[i][0]);
+				String tmp = scanner.nextLine();
+				
+				if(tmp.equals(words1[i][1])){
+					System.out.printf("정답입니다.%n%n");
+					
+				} else {
+					System.out.printf("틀렸습니다. 정답은 %s입니다.%n%n", words1[i][1]);
+				} 
+				
+			} System.out.printf("전체 %d문제중 &d문제 맞추셨습니다.%n%n",words1.length,ans);*/
+			
+			
+/*			[실행결과]
 			Q1. chair의 뜻은? dmlwk
 			틀렸습니다. 정답은 의자입니다
 			Q2. computer의 뜻은? 컴퓨터
@@ -289,25 +324,31 @@ public class Exam05 {
 			
 			[5-13] 단어의 글자위치를 섞어서 보여주고 원래의 단어를 맞추는 예제이다. 
 			실행결과와 같이 동작하도록 예제의 빈 곳을 채우시오. */
-			
+			/*
 			String[] words = { "television", "computer", "mouse", "phone" };
-			Scanner scanner = new Scanner(System.in);
+			Scanner s = new Scanner(System.in);
 			for(int i=0;i<words.length;i++) {
 			char[] question = words[i].toCharArray(); // String을 char[]로 변환
-			/*
-			(1) 알맞은 코드를 넣어 완성하시오.
-			char배열 question에 담긴 문자의 위치를 임의로 바꾼다.
-			*/
+			
+//			(1) 알맞은 코드를 넣어 완성하시오.
+//			char배열 question에 담긴 문자의 위치를 임의로 바꾼다.
+			
+			for(int j=0;j<question.length;j++) {
+				int idx = (int)(Math.random() * question.length);
+				char tmp = question[i];
+				question[i] = question[idx];
+				question[idx] = tmp;
+				}
 			System.out.printf("Q%d. %s의 정답을 입력하세요.>",
 			i+1, new String(question));
-			String answer1 = scanner.nextLine();
+			String answer1 = s.nextLine();
 			// trim()으로 answer의 좌우 공백을 제거한 후, equals로 word[i]와 비교
 			if(words[i].equals(answer1.trim()))
 			System.out.printf("맞았습니다.%n%n");
 			else
 			System.out.printf("틀렸습니다.%n%n");
 			}	
-			
+			*/
 //			[실행결과]
 //			Q1. lvtsieeoin의 정답을 입력하세요.>television
 //			맞았습니다.

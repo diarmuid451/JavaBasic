@@ -25,8 +25,7 @@ public class Exam05 {
 		{ 10, 10, 10},
 		{ 20, 20, 20, 20},
 		{ 30, 30}
-		};
-		
+		}; 
 		2
 		*/
 		
@@ -78,12 +77,20 @@ public class Exam05 {
 		int tmp = 0;
 		/*
 		(1) 알맞은 코드를 넣어 완성하시오.
-		*/ }
+		*/ 
+		tmp = ballArr[i];
+		ballArr[i] = ballArr[j];
+		ballArr[j] = tmp;
+		
+		}
 		// 배열 ballArr의 앞에서 3개의 수를 배열 ball3로 복사한다.
 		/* (2) */
+		for(int i = 0; i<ball3.length; i++){
+			ball3[i] = ballArr[i];
+		}
 		for(int i=0;i<ball3.length;i++) {
 		System.out.print(ball3[i]);
-		}				
+		} System.out.println();				
 //		[실행결과]
 //		486				
 		
@@ -95,7 +102,7 @@ public class Exam05 {
 		int money = 2680;
 		System.out.println("money="+money);
 		for(int i=0;i<coinUnit.length;i++) {
-			System.out.println(coinUnit[i] + "원 : " + money/coinUnit[i]);
+			System.out.println(coinUnit[i] + "원 : " + money/coinUnit[i] + "개");
 			money = money&coinUnit[i];
 			
 		}				
@@ -114,7 +121,7 @@ public class Exam05 {
 		
 		// 문자열을 숫자로 변환한다. 입력한 값이 숫자가 아닐 경우 예외가 발생한다.
 		
-			int money1 = 3510;
+			/*int money1 = 3510;
 			System.out.println("money="+money1);
 			int[] coinUnit1 = {500, 100, 50, 10 }; // 동전의 단위
 			int[] coin = {5, 5, 5, 5}; // 단위별 동전의 개수
@@ -142,7 +149,7 @@ public class Exam05 {
 			System.out.println("=남은 동전의 개수 =");
 			for(int i=0;i<coinUnit1.length;i++) {
 			System.out.println(coinUnit1[i]+"원:"+coin[i]);
-			}
+			}*/
 
 /*			[실행결과]
 			money=3170
@@ -202,11 +209,11 @@ public class Exam05 {
 			}
 			System.out.println();
 			for(int i=0; i < star.length;i++) {
-			for(int j=0; j < star[i].length;j++) {
-				int x = j;
-				int y = star.length-1-i;
+				for(int j=0; j < star[i].length;j++)
+//				for(int j=star[i].length-1; j >=0;j--)
+				{
 				
-			result[x][y] = star[i][j];
+			result[j][i] = star[star.length-1-i][j];
 			 }
 			}
 			for(int i=0; i < result.length;i++) {
@@ -329,10 +336,10 @@ public class Exam05 {
 			Scanner s = new Scanner(System.in);
 			for(int i=0;i<words.length;i++) {
 			char[] question = words[i].toCharArray(); // String을 char[]로 변환
-			
+
 //			(1) 알맞은 코드를 넣어 완성하시오.
 //			char배열 question에 담긴 문자의 위치를 임의로 바꾼다.
-			
+
 			for(int j=0;j<question.length;j++) {
 				int idx = (int)(Math.random() * question.length);
 				char tmp = question[i];
@@ -348,16 +355,16 @@ public class Exam05 {
 			else
 			System.out.printf("틀렸습니다.%n%n");
 			}	
-			*/
-//			[실행결과]
-//			Q1. lvtsieeoin의 정답을 입력하세요.>television
-//			맞았습니다.
-//			Q2. otepcumr의 정답을 입력하세요.>computer
-//			맞았습니다.
-//			Q3. usemo의 정답을 입력하세요.>asdf
-//			틀렸습니다.
-//			Q4. ohpne의 정답을 입력하세요.>phone
-//			맞았습니다.				
+			 */
+			//			[실행결과]
+			//			Q1. lvtsieeoin의 정답을 입력하세요.>television
+			//			맞았습니다.
+			//			Q2. otepcumr의 정답을 입력하세요.>computer
+			//			맞았습니다.
+			//			Q3. usemo의 정답을 입력하세요.>asdf
+			//			틀렸습니다.
+			//			Q4. ohpne의 정답을 입력하세요.>phone
+			//			맞았습니다.				
 			
 	}
 

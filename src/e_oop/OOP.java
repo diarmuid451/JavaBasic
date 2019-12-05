@@ -1,6 +1,10 @@
 package e_oop;
 
+import c_statement.Baseball;
+
 public class OOP {
+
+	
 
 	public static void main(String[] args) {
 		/*
@@ -29,9 +33,62 @@ public class OOP {
 		
 		//test1() 호출시 출력되는 문장에 번호를 붙여주세요.
 		sc.test1();
-		sc.test2();
-		sc.test3();
 		
+		//방금 만든 클래스의 객체를 생성하고 변수에 저장해주세요.
+		
+		ClassMaker cm = new ClassMaker();
+		//객체가 저장된 변수를 통해 메서드들을 호출해주세요.
+		//파라미터가 있는 메서드는 타입에 맞는 값을 념겨주시고, 리턴타입이 있는 메서드는 리턴받은 값을 출력해주세요.
+		
+		cm.salted();
+		
+		int delicious = cm.caramel();
+		System.out.println(delicious);
+		
+		
+		cm.chocholate(520);
+		
+		int fat = cm.Sandwich(50, 13);
+		System.out.println(fat);
+		
+		
+		Calculator cl = new Calculator();
+		
+		int plus = (int)cl.plus(12, 154);
+		System.out.println(plus);
+		
+		double minus = cl.minus(355.6, 21.2);
+		System.out.println(minus);
+		
+		double multifly = cl.multifly(23, 11.5);
+		System.out.println(multifly);
+		
+		double divide = cl.divide(15, 3);
+		System.out.println(divide);
+		
+		int reminder =(int)cl.reminder(17, 3);
+		System.out.println(reminder);
+		
+		//다음을 한줄씩 계산해서 최종 결과값을 출력해주세요.
+		//1. 123456 + 654321
+		double result = cl.plus(123456, 654321);
+		System.out.println(result);
+		//2. 1번의 결과값 * 123456
+		result = cl.multifly(result, 123456);
+		System.out.println(result);
+		//3. 2번의 결과값 / 123456
+		result = cl.divide(result, 123456);
+		System.out.println(result);
+		//4. 3번의 결과값 - 654321
+		result = cl.minus(result, 654321);
+		System.out.println(result);
+		//5. 4번의 결과값 % 123456
+		result = cl.reminder(result, 123456);
+		System.out.println(result);
+		System.out.println((int)result);
+			
 	}
-
+	
+	
+	
 }

@@ -86,9 +86,8 @@ public class OOP {
 		result = cl.reminder(result, 123456);
 		System.out.println(result);
 		System.out.println((int)result);
-			
+	
 	}
-	
-	
-	
+		
+		
 }

@@ -12,19 +12,30 @@ public class Exam06 {
 		class SutdaCard {
 		int num;
 		boolean isKwang;
+		public char[] info() {
+		
+			return null;
+		}	
 		}
-			
+		
 //		[6-2] 문제6-1에서 정의한 SutdaCard클래스에 두 개의 생성자와 info()를 추가해서 실행결과와 같은 결과를 얻도록 하시오.
-		/*
-		 SutdaCard card1 = new SutdaCard(3, false);
+		
+		SutdaCard card1 = new SutdaCard();
 		SutdaCard card2 = new SutdaCard();
 		System.out.println(card1.info()); // 3이 출력된다.
-		System.out.println(card2.info()); // 1K가 출력된다.
+		System.out.println(card2.info()); // 1K가 출력된다. 
 		
 		
-		class SutdaCard {
+		class SutdaCard1 {
+		int num;
+		boolean isKwang;
+		
+		
 		}	
-		 	*/
+		
+//		[실행결과]
+//		3
+//		1K
 	
 		
 	  /*[6-3] 다음과 같은 멤버변수를 갖는 Student클래스를 정의하시오.
@@ -116,7 +127,7 @@ public class Exam06 {
 //		}
 //		PlayingCard card = new PlayingCard(1,1);
 			
-		}
+		
 //		- 클래스변수(static변수) :
 //		- 인스턴스변수 :
 //		- 지역변수 :
@@ -402,6 +413,6 @@ public class Exam06 {
 		
 		
 		
-		
 	}
 }
+

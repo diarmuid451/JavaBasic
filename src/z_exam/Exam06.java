@@ -1,45 +1,29 @@
 package z_exam;
 
 public class Exam06 {
-
-	public static void main(String[] args) {
+	public static void main(String[] args) {		
 		/*
 		[6-1] 다음과 같은 멤버변수를 갖는 SutdaCard클래스를 정의하시오.
 		타 입 변수명 설 명
 		int num 카드의 숫자.(1~10사이의 정수)
 		boolean isKwang 광(光)이면 true, 아니면 false
 		*/
-		class SutdaCard {
-		int num;
-		boolean isKwang;
-		public char[] info() {
 		
-			return null;
-		}	
-		}
 		
 //		[6-2] 문제6-1에서 정의한 SutdaCard클래스에 두 개의 생성자와 info()를 추가해서 실행결과와 같은 결과를 얻도록 하시오.
 		
-		SutdaCard card1 = new SutdaCard();
+		SutdaCard card1 = new SutdaCard(3, false);
 		SutdaCard card2 = new SutdaCard();
 		System.out.println(card1.info()); // 3이 출력된다.
 		System.out.println(card2.info()); // 1K가 출력된다. 
 		
-		
-		class SutdaCard1 {
-		int num;
-		boolean isKwang;
-		
-		
-		}	
-		
+	
 //		[실행결과]
 //		3
 //		1K
-	
 		
-	  /*[6-3] 다음과 같은 멤버변수를 갖는 Student클래스를 정의하시오.
-		
+//	  	[6-3] 다음과 같은 멤버변수를 갖는 Student클래스를 정의하시오.
+		/*
 		타 입 변수명 설 명
 		String name 학생이름
 		int ban 반
@@ -61,97 +45,84 @@ public class Exam06 {
 		반환타입 : float
 		매개변수 : 없음*/
 		
-	/*	Student s = new Student();
+		Student s = new Student(null, 0, 0, 0, 0, 0);
 		s.name = "홍길동";
 		s.ban = 1;
 		s.no = 1;
 		s.kor = 100;
 		s.eng = 60;
 		s.math = 76;
+	
 		System.out.println("이름:"+s.name);
 		System.out.println("총점:"+s.getTotal());
-		System.out.println("평균:"+s.getAverage());
-	*/	
+		System.out.println("평균"+s.getAverage());
 		
 //		[6-5] 다음과 같은 실행결과를 얻도록 Student클래스에 생성자와 info()를 추가하시오.
 		
-		/*Student s = new Student("홍길동",1,1,100,60,76);
-		System.out.println(s.info());
+		Student s1 = new Student("홍길동",1,1,100,60,76);
+		System.out.println(s1.info());
 		
-		class Student {
-		*/
+		
 //		[실행결과]
 //		홍길동,1,1,100,60,76,236,78.7	
 		
 		
-		/*[6-6] 두 점의 거리를 계산하는 getDistance()를 완성하시오.
-		[Hint] 제곱근 계산은 Math.sqrt(double a)를 사용하면 된다.
-		[연습문제]/ch6/Exercise6_6.java
+//		[6-6] 두 점의 거리를 계산하는 getDistance()를 완성하시오.
+//		[Hint] 제곱근 계산은 Math.sqrt(double a)를 사용하면 된다.
+//		 두 점 (x,y)와 (x1,y1)간의 거리를 구한다.
+		distance dis = new distance();
+		System.out.println(dis.getDistance(1,1,2,2));
+//		[실행결과]
+//		1.4142135623730951
 			
-		// 두 점 (x,y)와 (x1,y1)간의 거리를 구한다.
-		static double getDistance(int x, int y, int x1, int y1) {
-		return Math.sqrt((x-x1)*(x-x1) + (y-y1)*(y-y1)); // x, y는 지역변수
-		}
-		System.out.println(getDistance(1,1,2,2));
-		*/			
 		
 		
 //		[6-7] 문제6-6에서 작성한 클래스메서드 getDistance()를 MyPoint클래스의 인스턴스 메서드로 정의하시오.
-		class MyPoint {
-		int x;
-		int y;			
-		MyPoint(int x, int y) {
-		this.x = x;
-		this.y = y;
-			}
-			/*
-			(1) 인스턴스메서드 getDistance를 작성하시오.
-			*/
-		}
 		MyPoint p = new MyPoint(1,1);
 		// p와 (2,2)의 거리를 구한다.
-//		System.out.println(p.getDistance(2,2));
+		System.out.println(p.getDistance1(2,2));
 		
 //		[실행결과]
 //		1.4142135623730951				
 			
-//		[6-8] 다음의 코드에 정의된 변수들을 종류별로 구분해서 적으시오.
-//		class PlayingCard {
-//		int kind;
-//		int num;			
-//		static int width;
-//		static int height;
-//		PlayingCard(int k, int n) {
-//		kind = k;
-//		num = n;
-//		}
-//		PlayingCard card = new PlayingCard(1,1);
-			
+/*	[6-8] 다음의 코드에 정의된 변수들을 종류별로 구분해서 적으시오.
+		class PlayingCard {
+		int kind;
+		int num;			
+		static int width;
+		static int height;
+		PlayingCard(int k, int n) {
+		kind = k;
+		num = n;
+		}
+		public static void main(String args[]){
+		PlayingCard card = new PlayingCard(1,1);
+	}
+}		*/			
 		
-//		- 클래스변수(static변수) :
-//		- 인스턴스변수 :
-//		- 지역변수 :
+//		- 클래스변수(static변수) : width, height
+//		- 인스턴스변수 : kind, num
+//		- 지역변수 : k, n, card, args
 
-//		[6-9] 다음은 컴퓨터 게임의 병사(marine)를 클래스로 정의한 것이다. 이 클래스의 멤버중에 
-//		static을 붙여야 하는 것은 어떤 것들이고 그 이유는 무엇인가?(단, 모든 병사의 공격력과 방어력은 같아야 한다.)
-		
+/*		[6-9] 다음은 컴퓨터 게임의 병사(marine)를 클래스로 정의한 것이다. 이 클래스의 멤버중에 
+		static을 붙여야 하는 것은 어떤 것들이고 그 이유는 무엇인가?(단, 모든 병사의 공격력과 방어력은 같아야 한다.)
 		class Marine {
-		int x=0, y=0; // Marine의 위치좌표(x,y)
-		int hp = 60; // 현재 체력
-		int weapon = 6; // 공격력
-		int armor = 0; // 방어력
-		void weaponUp() {
-		weapon++;
-		}
-		void armorUp() {
-		armor++;
-		}
-		void move(int x, int y) {
-		this.x = x;
-		this.y = y;
-		}
-		}
-		
+			int x=0, y=0; // Marine의 위치좌표(x,y)
+			int hp = 60; // 현재 체력
+		static	int weapon = 6; // 공격력
+		static	int armor = 0; // 방어력
+		static	void weaponUp() {
+				weapon++;
+			}
+		static	void armorUp() {
+				armor++;
+			}
+			void move(int x, int y) {
+				this.x = x;
+				this.y = y;
+			}
+		}	*/
+
 	/* [6-10] 다음 중 생성자에 대한 설명으로 옳지 않은 것은? (모두 고르시오)
 		a. 모든 생성자의 이름은 클래스의 이름과 동일해야한다.
 		b. 생성자는 객체를 생성하기 위한 것이다.
@@ -413,6 +384,89 @@ public class Exam06 {
 		
 		
 		
+		
+		
+	}
+	
+}
+
+
+
+class SutdaCard { //6-1,6-2 클래스
+	int num;
+	boolean isKwang;
+	SutdaCard(){
+		this(1,true);
+	}
+	SutdaCard(int num, boolean isKwang){
+		this.num = num;
+		this.isKwang = isKwang;
+	}
+	String info(){
+		return num+(isKwang ? "K" : "");
 	}
 }
+class Student{	//6-3,6-4, 6-5 클래스
+	String name;
+	int ban;	
+	int no;
+	int kor;
+	int eng;
+	int math;
+	Student(String name, int ban, int no, int kor, int eng, int math){
+		this.name = name;
+		this.ban = ban;
+		this.no = no;
+		this.kor = kor;
+		this.eng = eng;
+		this.math = math;
+		
+	}
+	int getTotal(){
+		return kor+eng+math;
+	}
+	float getAverage(){
+		return (int)(getTotal()/3f *10 +0.5f)/10f;
+	}
+	String info(){
+		return name+","+no+","+kor+","+eng+","+math+","+getTotal()+","+getAverage();
+	}
+}
+class distance{
+	int x1;
+	int y1;
+	int x;
+	int y;
+	distance(){		
+	}
+	
+	double getDistance(int x, int y, int x1, int y1){
+	return Math.sqrt((x-x1)*(x-x1) + (y-y1)*(y-y1));
+	}
+}
+class MyPoint{
+	
+		int x;
+		int y;			
+		MyPoint(int x, int y) {
+		this.x = x;
+		this.y = y;
+			}
+	double getDistance1(int x1, int y1){
+		return 	Math.sqrt((x-x1)*(x-x1)+(y-y1)*(y-y1));
+		
+	}
+		
+		
+}
+		
+		
+
+		
+		
+		
+		
+		
+	
+
 

@@ -20,7 +20,7 @@ public class SampleChild  extends SampleParent{
 		
 		sc.test(10);
 		
-		SampleParent sp = new SampleChild(); //부모타입이 가지고 있는 멤버만 사용할 수 있다.
+		SampleParent sp = /*(SampleParent) -생략 가능 */new SampleChild(); //부모타입이 가지고 있는 멤버만 사용할 수 있다.
 		System.out.println("sp.var : " + sp.var);
 		System.out.println("sc.var : " + sc.var); //부모와 자식 간의 변수는 서로 다르다.
 		System.out.println("sp.method() : " + sp.method(5, 10));

@@ -1,5 +1,7 @@
 package f_oop2;
 
+import f_oop2.test.AccessTest;
+
 public class Inheritance {
 
 	public static void main(String[] args) {
@@ -33,8 +35,8 @@ public class Inheritance {
 		 * - 상속으로 인해 여러가지 형태를 가지게 되는 특징을 말한다.
 		 * - 부모타입으로 생성된 객체는 부모타입에 정의된 멤버만 사용 가능하다.
 		 * - 부모타입과 자식타입은 서로 형변환이 가능하다.
-		 * - 자식타입 > 부모타입 : Up-casting(생략가능)
-		 * - 부모타입 > 자식타입 : Down-casting(생략불가)
+		 * - 자식타입 >> 부모타입 : Up-casting(생략가능)
+		 * - 부모타입 >> 자식타입 : Down-casting(생략불가)
 		 * - 부모와 자식에 동일한 메서드가 있는 경우 자식의 메서드를 사용한다.
 		 * - 부모와 자식에 동일한 멤버변수가 있는 경우 부모타입에서는 부모의 변수를 자식타입에서는 자식의 변수를 사용한다.
 		 * 
@@ -42,7 +44,7 @@ public class Inheritance {
 		 * - 외부로부터 데이터를 보호하거나 감추기 위해 사용한다.
 		 * - public : 접근에 제한이 없다.
 		 * - protected : 같은 패키지, 그리고 상속받은 클래스에서 접근이 가능하다.
-		 * - default : 같은 패키지에서만 접근이 가능하다.
+		 * - default : 같은 패키지에서만 접근이 가능하다. 생략하면 기본적으로 붙는다
 		 * - private : 클래스 내에서만 접근이 가능하다.
 		 * 
 		 * << Singleton(싱글톤 패턴)>>
@@ -50,7 +52,30 @@ public class Inheritance {
 		 * - 객체들간에 객체를 공유하기 위해 사용한다. 
 		 */
 		
-
+		AccessModifier am = new AccessModifier();
+		
+		System.out.println(am.publicVar);
+		am.publicMethod();
+		
+		System.out.println(am.protectedVar);
+		am.protectedMethod();
+		
+		System.out.println(am.defaultVar);
+		am.defaultMethod();
+		
+//		System.out.println(am.privateVar);
+//		am.privateMethod();
+		
+		Time t = new Time();
+//		t.setHour(33);
+//		t.setMinute(70);
+//		t.setSecond(999);
+		
+		t.setSecond(100000);
+		
+		
+		System.out.println(t);
+		
 	}
 
 }

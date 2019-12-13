@@ -635,6 +635,5 @@ public class LOLChamp {
 public static void main(String[] args) {
 		
 	new LOLChamp().champName();
-		
 	}
 }

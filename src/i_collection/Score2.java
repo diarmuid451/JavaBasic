@@ -35,16 +35,52 @@ public class Score2 {
 //		-------------------------
 //		double[][]scores = new double[students.length][subjects.length+3];
 		ArrayList<ArrayList<Integer>> scores = new ArrayList<>();
+		ArrayList<Integer> sc = new ArrayList<>();
+		
+//		scores[i][0] = 1; //석차
+		
+		int sum = 0;
+		int avg = 0;
+		sc.add(1);
+		scores.add(sc);
+
+		
 //		//점수를 입력한다.
 //		for(int i = 0; i<scores.length;i++ ){
-//			scores[i][0] = 1; //석차
+//			
 //			for(int j = 0; j<subjects.length; j++){
 //				scores[i][j+1] = (int)(Math.random()*51 + 50);
 //			}
-//		}
-		for(int i =0; i<scores.size();i++){
-			
-		}
+//		}	
+
+		for(int i = 0; i<students.size();i++){
+			for(int j = 0; j<subjects.size();j++){
+				sc.add((int)(Math.random()*51 +50));
+				sum += sc.get(j+1);
+			} 
+			avg = (int)(sum / (subjects.size())*100 + 0.5) / 100;
+			sc.add(sum);
+			sc.add(avg);
+			scores.add(sc);
+		}	
+		
+//		for(int i = 0; i<students.size(); i++){
+//			System.out.println(students.get(i));	
+//		} //학생 이름 나열식
+		
+		for(int i = 0; i<students.size();i++){
+			System.out.print(scores.get(i));
+		} System.out.println();
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 //		//총점과 평균을 구한다.
 //		for(int i = 0; i < scores.length; i++){
 //			for(int j = 0; j < subjects.length; j++){
@@ -52,7 +88,7 @@ public class Score2 {
 //			} 
 //			scores[i][scores[i].length-1] = (int)(scores[i][scores[i].length-2] / subjects.length * 100 +0.5)/100.0; //평균
 //		}
-//		
+		
 //		//석차를 구한다.
 //		for(int i = 0; i< scores.length; i++){
 //			for(int j = 0; j < scores.length; j++){

@@ -42,12 +42,15 @@ public class ArrayListClass {
 		ArrayList<Integer> list4 = new ArrayList<>();
 		list4.add(10);
 		
-		list3.add(list4);
-		
-		list4 = new ArrayList<>();
-		list4.add(10);
+		list4.add(20);
 		
 		list3.add(list4);
+		for(int i = 0; i<list3.size();i++){
+			for(int j = 0; j<list4.size(); j++){
+				System.out.print(list4.get(j)+ "\t");
+			}
+			 System.out.println();
+		}
 		
 //		정수를 저장할 수 있는 ArrayList를 생성해 값을 5번 넣어주세요.
 		ArrayList<Integer> listIn = new ArrayList<>();
@@ -58,7 +61,7 @@ public class ArrayListClass {
 		listIn.add(50);
 		
 		for(int i = 0; i<listIn.size(); i++){
-			System.out.println(listIn.get(i) + " ");
+			System.out.print(listIn.get(i) + " ");
 		}
 //		위에서 만든 ArrayList에 담긴 값들의 합계와 평균을 출력해주세요.
 		
